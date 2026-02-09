@@ -1,31 +1,86 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>XO Center</title>
-  <style>
-    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:44px;line-height:1.55;max-width:900px}
-    .muted{color:#6b7280}
-    .box{border:1px solid #e5e7eb;border-radius:14px;padding:18px 20px}
-    a{color:#2563eb;text-decoration:none} a:hover{text-decoration:underline}
-    ul{padding-left:18px}
-    code{background:#f3f4f6;padding:.15em .35em;border-radius:6px}
-  </style>
-</head>
-<body>
-  <h1>XO Center</h1>
-  <p class="muted">A quiet map of the constellation.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xo.center</title>
+    <meta name="description" content="A quiet map of the XO constellation." />
+    <style>
+      body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 40px; line-height: 1.55; }
+      a { color: inherit; }
+      .muted { color: #6b7280; }
+      .wrap { max-width: 860px; }
+      .card { border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px 20px; margin: 16px 0; }
+      .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+      @media (min-width: 820px) { .grid { grid-template-columns: 1fr 1fr; } }
+      h1 { margin: 0 0 6px 0; }
+      h2 { margin: 0 0 6px 0; font-size: 16px; }
+      .tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid #e5e7eb; margin-left: 8px; }
+      code { background: #f3f4f6; padding: 0.15em 0.35em; border-radius: 6px; }
+      footer { margin-top: 22px; }
+      ul { margin: 10px 0 0 18px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>xo.center</h1>
+      <div class="muted">A quiet map of the constellation.</div>
 
-  <div class="box">
-    <p><strong>Start here</strong> — each domain is a small, verifiable surface.</p>
-    <ul>
-      <li><a href="https://xoledger.com/">XO Ledger</a> <span class="muted">read-only anchors</span></li>
-      <li><a href="https://xo-digest.com/">XO Digest</a> <span class="muted">daily summaries (offline ild)</span></li>
-      <li><a href="https://xo-pulse.com/">XO Pulse</a> <span class="muted">public trail of posts</span></li>
-      <li><a href="https://xo-vault.com/">XO Vault</a> <span class="muted">API + sealed memory</span></li>
-    </ul>
-    <p class="muted">Principle: <code>Signed → Visible → Alive</code> · no coupling — only receipts.</p>
-  </div>
-</body>
+      <div class="card">
+        <div class="muted">Four pillars — minimal, verifiable, and linked.</div>
+        <div class="grid" style="margin-top:12px;">
+          <div class="card" style="margin:0;">
+            <h2>Ledger <span class="tag">read-only</span></h2>
+            <div class="muted">Append-only receipts. The trail that doesn’t forget.</div>
+            <div style="margin-top:10px;"><a href="https://xoledger.com/">xoledger.com</a></div>
+          </div>
+
+          <div class="card" style="margin:0;">
+            <h2>Digest <span class="tag">daily</span></h2>
+            <div class="muted">One page per day. One hash per page.</div>
+            <div style="margin-top:10px;"><a href="https://xo-digest.com/">xo-digest.com</a></div>
+          </div>
+
+          <div class="card" style="margin:0;">
+            <h2>Pulse <span class="tag">publishing</span></h2>
+            <div class="muted">Posts become artifacts. Artifacts become memory.</div>
+            <div style="margin-top:10px;"><a href="https://xo-pulse.com/">xo-pulse.com</a></div>
+          </div>
+
+          <div class="card" style="margin:0;">
+            <h2>Vault <span class="tag">signing</span></h2>
+            <div class="muted">Seals, signatures, and bundles — the trust layer.</div>
+            <div style="margin-top:10px;"><a href="https://xo-vault.com/">xo-vault.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>How it works (without the ceremony)</h2>
+        <ul>
+          <li><strong>Write</strong> once.</li>
+          <li><strong>Seal</strong> what matters (<code>hash + signature</code>).</li>
+          <li><strong>Publish</strong> as static output.</li>
+          <li><strong>Anchor</strong> the day in the ledger.</li>
+        </ul>
+        <div class="muted" style="margin-top:10px;">Signed → Visible → Alive.</div>
+      </div>
+
+      <div class="card">
+        <h2>Routes</h2>
+        <div class="muted">Short paths that resolve to the right place.</div>
+        <ul>
+          <li><code>/ledger</code> → xoledger.com</li>
+          <li><code>/digest</code> → xo-digest.com</li>
+          <li><code>/pulse</code> → xo-pulse.com</li>
+          <li><code>/vault</code> → xo-vault.com</li>
+        </ul>
+        <div class="muted">When ready, these routes will move to <code>constellation.bond</code>.</div>
+      </div>
+
+      <footer class="muted">
+        <div><strong>Later:</strong> <code>constellation.bond</code> (a living map & routes).</div>
+      </footer>
+    </div>
+  </body>
 </html>
