@@ -1,12 +1,11 @@
-name: Deploy xo.center (Pages)
+name: Deploy constellation.bond (Pages)
 
 on:
   push:
     branches: [ main ]
     paths:
-      - "index.html"
-      - "shared/**"
-      - ".github/workflows/pages-deploy.yml"
+      - "constellation-bond/**"
+      - ".github/workflows/pages-deploy-constellation.yml"
 
 jobs:
   deploy:
@@ -16,11 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Deploy root (xo.center project)
-      - name: Deploy xo-center project
+      - name: Deploy constellation-bond project
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: xo-center
-          directory: .
+          projectName: constellation-bond
+          directory: constellation-bond
