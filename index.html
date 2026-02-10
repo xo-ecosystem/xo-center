@@ -19,6 +19,7 @@
     h2{font-size:16px;margin:0 0 10px 0;letter-spacing:.02em;text-transform:uppercase}
     p{margin:0}
     .label{color:var(--muted);max-width:62ch}
+    .label strong{color:var(--ink);font-weight:650}
     .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
     a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
     a:hover{border-bottom-color:rgba(16,17,20,.35)}
@@ -26,6 +27,20 @@
     code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.95em}
     .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
     .muted{color:var(--muted)}
+    ul{margin:10px 0 0 18px;padding:0}
+    li{margin:6px 0}
+    .tiny{font-size:12px;color:var(--muted)}
+    table.status{width:100%;border-collapse:separate;border-spacing:0;margin-top:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    table.status th,table.status td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
+    table.status th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:650;background:rgba(16,17,20,.02)}
+    table.status tr:last-child td{border-bottom:none}
+    .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--muted)}
+    .tag.live{color:var(--ink)}
+    .tag.build{color:var(--muted)}
+    .tag.parked{color:var(--muted)}
+    ul.changelog{margin:10px 0 0 18px;padding:0}
+    ul.changelog li{margin:8px 0}
+    .date{display:inline-block;min-width:98px}
   </style>
 </head>
 <body>
@@ -42,83 +57,163 @@
     <section class="grid">
       <article class="card">
         <h2>Ledger</h2>
-        <p class="label">A public memory of what happened — small receipts, big clarity.</p>
+        <p class="label"><strong>The memory that does not forget.</strong><br/>A public timeline of receipts — small entries, big clarity.</p>
         <div class="row">
-          <a href="https://xoledger.com">xoledger.com</a>
+          <a href="https://xoledger.com/ledger/">Open ledger →</a>
+          <span class="muted">xoledger.com</span>
         </div>
-        <!-- OPS:BEGIN
+        <!-- OPS:STRIP:BEGIN
         - Purpose: append-only timeline (events, receipts, anchors)
         - Canon: /vault/daily/ index + atom feed when enabled
         - Health: should always serve static (no runtime dependencies)
-        OPS:END -->
+        OPS:STRIP:END -->
       </article>
 
       <article class="card">
         <h2>Vault</h2>
-        <p class="label">Where things are sealed: signatures, bundles, provenance, and replies.</p>
+        <p class="label"><strong>What is sealed can be trusted.</strong><br/>Signatures, bundles, provenance — plus an inbox for replies.</p>
         <div class="row">
-          <a href="https://xo-vault.com">xo-vault.com</a>
+          <a href="https://xo-vault.com">Open vault →</a>
+          <span class="muted">xo-vault.com</span>
         </div>
-        <!-- OPS:BEGIN
+        <!-- OPS:STRIP:BEGIN
         - Stores: signed bundles + metadata; pins to IPFS/Arweave/Storj as configured
         - Inbox: public replies under /inbox/<drop_id>/ (signed or unsigned)
         - Rule: if it can’t be rebuilt from CLI, it doesn’t exist
-        OPS:END -->
+        OPS:STRIP:END -->
       </article>
 
       <article class="card">
         <h2>Pulse</h2>
-        <p class="label">A calm stream of updates — what’s new, what moved, what’s next.</p>
+        <p class="label"><strong>Where signals become artifacts.</strong><br/>Updates that can be referenced later — and verified if needed.</p>
         <div class="row">
-          <a href="https://xopulse.com">xopulse.com</a>
-          <a href="https://xowlpost.com">xowlpost.com</a>
+          <a href="https://xo-pulse.com">View pulse →</a>
+          <span class="muted">xo-pulse.com</span>
         </div>
-        <!-- OPS:BEGIN
+        <!-- OPS:STRIP:BEGIN
         - Format: MD/MDX posts, optionally signed + synced
         - Flow: write → sign → preview → publish → digest
-        OPS:END -->
+        OPS:STRIP:END -->
       </article>
 
       <article class="card">
         <h2>Digest</h2>
-        <p class="label">A daily mirror: the minimum you need to stay oriented.</p>
+        <p class="label"><strong>One day. One page.</strong><br/>A calm daily mirror: what changed, what matters, where to look next.</p>
         <div class="row">
-          <a href="https://xo-digest.com">xo-digest.com</a>
+          <a href="https://xo-digest.com">View digest →</a>
+          <span class="muted">xo-digest.com</span>
         </div>
-        <!-- OPS:BEGIN
+        <!-- OPS:STRIP:BEGIN
         - Output: /vault/daily/index.html + /vault/daily/atom.xml
         - Hosting: Cloudflare Pages (static)
-        OPS:END -->
+        OPS:STRIP:END -->
       </article>
 
       <article class="card">
         <h2>Drops</h2>
-        <p class="label">Collectibles as containers: images, traits, lore, and ongoing replies.</p>
+        <p class="label"><strong>Collectibles as containers.</strong><br/>Images, traits, lore — and ongoing replies that keep it alive.</p>
         <div class="row">
-          <a href="https://xoseals.com">xoseals.com</a>
+          <a href="https://xoseals.com">Explore drops →</a>
+          <span class="muted">xoseals.com</span>
         </div>
-        <!-- OPS:BEGIN
+        <!-- OPS:STRIP:BEGIN
         - Each drop: bundle + preview page + inbox thread
         - Principle: the drop can evolve, the signature stays true
-        OPS:END -->
+        OPS:STRIP:END -->
       </article>
 
       <article class="card">
         <h2>Constellation</h2>
-        <p class="label">Not a product — a shared map. Bonds, links, and the long arc.</p>
+        <p class="label"><strong>How the pieces relate.</strong><br/>A quiet map of systems, flows, and alignment over time.</p>
         <div class="row">
-          <a href="https://constellation.bond">constellation.bond</a>
+          <a href="https://constellation.bond">Explore constellation →</a>
+          <span class="muted">constellation.bond</span>
         </div>
-        <!-- OPS:BEGIN
+        <!-- OPS:STRIP:BEGIN
         - This is a landing + directory layer, intentionally light
         - Use when a domain should point somewhere meaningful before it’s “ready”
-        OPS:END -->
+        OPS:STRIP:END -->
+</article>
+
+      <article class="card">
+        <h2>Ops</h2>
+        <p class="label"><strong>What’s up right now.</strong><br/>A small uptime surface: domains, APIs, and health links.</p>
+        <ul>
+          <li><a href="https://xo-vault.com">xo-vault.com</a> <span class="muted">API</span></li>
+          <li><a href="https://xoledger.com/health">xoledger.com/health</a> <span class="muted">health</span></li>
+          <li><a href="https://xo-digest.com/vault/daily/index.html">xo-digest.com</a> <span class="muted">daily</span></li>
+          <li><a href="https://xowlpost.com">xowlpost.com</a> <span class="muted">publisher</span></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Status</h2>
+        <p class="label"><strong>Live / Parked / Build.</strong><br/>A tiny status table so nothing feels random.</p>
+
+        <div style="overflow:auto;border:1px solid var(--line);border-radius:12px;margin-top:12px">
+          <table style="width:100%;border-collapse:collapse;font-size:14px">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">Surface</th>
+                <th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">Domain</th>
+                <th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">State</th>
+                <th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid var(--line)">Center</td>
+                <td style="padding:10px"><a href="https://xo.center">xo.center</a></td>
+                <td style="padding:10px"><span class="pill">Live</span></td>
+                <td style="padding:10px" class="muted">Directory surface</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid var(--line)">Constellation</td>
+                <td style="padding:10px;border-bottom:1px solid var(--line)"><a href="https://constellation.bond">constellation.bond</a></td>
+                <td style="padding:10px;border-bottom:1px solid var(--line)"><span class="pill">Parked</span></td>
+                <td style="padding:10px;border-bottom:1px solid var(--line)" class="muted">Placeholder landing</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid var(--line)">Vault</td>
+                <td style="padding:10px;border-bottom:1px solid var(--line)"><a href="https://xo-vault.com">xo-vault.com</a></td>
+                <td style="padding:10px;border-bottom:1px solid var(--line)"><span class="pill">Live</span></td>
+                <td style="padding:10px;border-bottom:1px solid var(--line)" class="muted">API root (UI later)</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border-bottom:1px solid var(--line)">Ledger</td>
+                <td style="padding:10px;border-bottom:1px solid var(--line)"><a href="https://xoledger.com/ledger/">xoledger.com</a></td>
+                <td style="padding:10px;border-bottom:1px solid var(--line)"><span class="pill">Live</span></td>
+                <td style="padding:10px;border-bottom:1px solid var(--line)" class="muted">Use stable /ledger/ path</td>
+              </tr>
+              <tr>
+                <td style="padding:10px">Pulse</td>
+                <td style="padding:10px"><a href="https://xo-pulse.com">xo-pulse.com</a></td>
+                <td style="padding:10px"><span class="pill">Build</span></td>
+                <td style="padding:10px" class="muted">Copy + routes evolving</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:16px">
+          <h2>Changelog</h2>
+          <p class="label"><strong>One line you can update in 10 seconds.</strong><br/>Keep it human and dated.</p>
+          <ul>
+            <li><code>2026-02-10</code> xo.center map updated; constellation.bond parked landing live.</li>
+            <!-- add next line here -->
+          </ul>
+        </div>
+
+        <div class="row">
+          <a href="https://github.com/xo-ecosystem/xo-center">Source →</a>
+          <span class="tiny">If Pages fails: it’s usually transient GitHub fetch. Action deploy below removes most of that.</span>
+        </div>
       </article>
     </section>
 
     <footer>
       <span>XO is a public surface with a private key — calm by design.</span>
-      <span class="muted">Last updated: <code><!-- set later --></code></span>
+      <span class="muted">Last updated: <code>2026-02-10</code></span>
     </footer>
   </main>
 </body>
