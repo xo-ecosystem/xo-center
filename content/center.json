@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "xo.center",
+    "tagline": "A quiet map of the constellation — what exists, what it’s for, where it lives.",
+    "pills": ["Signed → Visible → Alive", "Public surface · Private keys"],
+    "last_updated": "2026-02-20"
+  },
+  "cards": [
+    {
+      "key": "ledger",
+      "title": "Ledger",
+      "headline": "The memory that does not forget.",
+      "body": "A public timeline of receipts — small entries, big clarity.",
+      "cta_label": "Open ledger →",
+      "cta_href": "https://xoledger.com"
+    },
+    {
+      "key": "vault",
+      "title": "Vault",
+      "headline": "What is sealed can be trusted.",
+      "body": "Signatures, bundles, provenance — plus an inbox for replies.",
+      "cta_label": "Open vault →",
+      "cta_href": "https://xo-vault.com"
+    },
+    {
+      "key": "pulse",
+      "title": "Pulse",
+      "headline": "Where signals become artifacts.",
+      "body": "Updates that can be referenceified if needed.",
+      "cta_label": "View pulse →",
+      "cta_href": "https://xo-pulse.com"
+    },
+    {
+      "key": "digest",
+      "title": "Digest",
+      "headline": "One day. One page.",
+      "body": "A calm daily mirror: what changed, what matters, where to look next.",
+      "cta_label": "View digest →",
+      "cta_href": "https://xo-digest.com"
+    },
+    {
+      "key": "drops",
+      "title": "Drops",
+      "headline": "Collectibles as containers.",
+      "body": "Images, traits, lore — and ongoing replies that keep it alive.",
+      "cta_label": "Explore drops →",
+      "cta_href": "https://xoseals.com"
+    },
+    {
+      "key": "constellation",
+      "title": "Constellation",
+      "headline": "How the pieces relate.",
+      "body": "A quiet map of systems, flows, and alignment over time.",
+      "cta_label": "Explore constellation →",
+      "cta_href": "https://constellation.bond"
+    }
+  ],
+  "ops": {
+    "title": "Ops",
+    "subtitle": "What’s up right now.",
+    "items": [
+  : "xo-vault.com API", "href": "https://xo-vault.com/health"},
+      {"label": "xoledger.com /health", "href": "https://xoledger.com/health"},
+      {"label": "xo-digest.com daily", "href": "https://xo-digest.com/vault/daily/"},
+      {"label": "xowlpost.com publisher", "href": "https://xowlpost.com"}
+    ]
+  },
+  "status": {
+    "title": "Status",
+    "subtitle": "Live / Parked / Build.",
+    "rows": [
+      {"surface": "Center", "domain": "xo.center", "state": "Live", "note": "Directory surface"},
+      {"surface": "Constellation", "domain": "constellation.bond", "state": "Parked", "note": "Placeholder landing"},
+      {"surface": "Vault", "domain": "xo-vault.com", "state": "Live", "note": "API root (UI later)"},
+      {"surface": "Ledger", "domain": "xoledger.com", "state": "Live", "note": "Stable /ledger/ paths"},
+      {"surface": "Pulse", "domain": "xo-pulse.com", "state": "Build", "note": "Routes evolving"}
+    ]
+  },
+  "changelog": {
+    "title": "Changelog",
+    "subtitle": "One line you can update in 10 seconds.",
+    "bullets": [
+      "2026-02-20 — xo.center map stabilized; status table updated."
+    ],
+    "source_label": "Source →",
+    "source_href": "https://github.com/xo-ecosystem/xo-center"
+  },
+  "footer": {
+    "left": "XO is a public surface with a private key — calm by design.",
+    "right_prefix": "Last updated: "
+  }
+}
