@@ -32,7 +32,7 @@
       "name": "digest_atom",
       "label": "Digest Atom feed",
       "url": "https://xo-digest.com/vault/daily/atom.xml",
-      "note": "daily feed"
+      "note": "daily feed (currently missing; enable atom.xml in xo-core-clean digest build)"
     }
   ]
 }
