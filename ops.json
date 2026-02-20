@@ -8,5 +8,31 @@
     {"name":"pulse","url":"https://xo-pulse.com","state":"build","note":"copy + routes evolving"},
     {"name":"drops","url":"https://xoseals.com","state":"live","note":"drop index"},
     {"name":"constellation","url":"https://constellation.bond","state":"parked","note":"placeholder landing"}
+  ],
+  "links": [
+    {
+      "name": "ledger_day_pdf_sample",
+      "label": "Ledger sample PDF (2026-02-09)",
+      "url": "https://xoledger.com/ledger/day/2026-02-09/pdf",
+      "note": "deep link to rendered day PDF"
+    },
+    {
+      "name": "ledger_day_merkle_sample",
+      "label": "Ledger sample Merkle (2026-02-09)",
+      "url": "https://xoledger.com/ledger/day/2026-02-09/merkle",
+      "note": "deep link to day merkle json"
+    },
+    {
+      "name": "vault_verify",
+      "label": "Vault verify endpoint",
+      "url": "https://xo-vault.com/api/verify",
+      "note": "verification API (may require POST)"
+    },
+    {
+      "name": "digest_atom",
+      "label": "Digest Atom feed",
+      "url": "https://xo-digest.com/vault/daily/atom.xml",
+      "note": "daily feed"
+    }
   ]
 }
