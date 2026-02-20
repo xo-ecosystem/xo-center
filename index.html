@@ -30,6 +30,8 @@
     ul{margin:10px 0 0 18px;padding:0}
     li{margin:6px 0}
     .tiny{font-size:12px;color:var(--muted)}
+    .keypaths{margin-top:10px;font-size:12px;color:var(--muted)}
+    .keypaths code{background:rgba(16,17,20,.02);border:1px solid rgba(16,17,20,.08)}
     table.status{width:100%;border-collapse:separate;border-spacing:0;margin-top:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
     table.status th,table.status td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
     table.status th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:650;background:rgba(16,17,20,.02)}
@@ -86,6 +88,7 @@
           <a href="https://xoledger.com/ledger/">Open ledger →</a>
           <span class="muted">xoledger.com</span>
         </div>
+        <div class="keypaths">Key paths: <code>/ledger/day/YYYY-MM-DD</code> · <code>/merkle</code> · <code>/pdf</code></div>
         <!-- OPS:STRIP:BEGIN
         - Purpose: append-only timeline (events, receipts, anchors)
         - Canon: /vault/daily/ index + atom feed when enabled
@@ -100,6 +103,7 @@
           <a href="https://xo-vault.com">Open vault →</a>
           <span class="muted">xo-vault.com</span>
         </div>
+        <div class="keypaths">Key paths: <code>/inbox/&lt;drop_id&gt;/</code> · <code>/drops/&lt;drop_id&gt;/</code> · <code>/api/verify</code></div>
         <!-- OPS:STRIP:BEGIN
         - Stores: signed bundles + metadata; pins to IPFS/Arweave/Storj as configured
         - Inbox: public replies under /inbox/<drop_id>/ (signed or unsigned)
@@ -114,6 +118,7 @@
           <a href="https://xo-pulse.com">View pulse →</a>
           <span class="muted">xo-pulse.com</span>
         </div>
+        <div class="keypaths">Key paths: <code>/p/&lt;slug&gt;</code> · <code>/p/&lt;slug&gt;/signed</code> · <code>/p/&lt;slug&gt;/bundle</code></div>
         <!-- OPS:STRIP:BEGIN
         - Format: MD/MDX posts, optionally signed + synced
         - Flow: write → sign → preview → publish → digest
@@ -127,6 +132,7 @@
           <a href="https://xo-digest.com">View digest →</a>
           <span class="muted">xo-digest.com</span>
         </div>
+        <div class="keypaths">Key paths: <code>/vault/daily/index.html</code> · <code>/vault/daily/atom.xml</code></div>
         <!-- OPS:STRIP:BEGIN
         - Output: /vault/daily/index.html + /vault/daily/atom.xml
         - Hosting: Cloudflare Pages (static)
@@ -140,6 +146,7 @@
           <a href="https://xoseals.com">Explore drops →</a>
           <span class="muted">xoseals.com</span>
         </div>
+        <div class="keypaths">Key paths: <code>/drops/&lt;drop_id&gt;/</code> · <code>/drops/&lt;drop_id&gt;/mint</code> · <code>/drops/&lt;drop_id&gt;/traits</code></div>
         <!-- OPS:STRIP:BEGIN
         - Each drop: bundle + preview page + inbox thread
         - Principle: the drop can evolve, the signature stays true
@@ -153,6 +160,7 @@
           <a href="https://constellation.bond">Explore constellation →</a>
           <span class="muted">constellation.bond</span>
         </div>
+        <div class="keypaths">Key paths: <code>/map</code> · <code>/flows</code> · <code>/overview</code></div>
         <!-- OPS:STRIP:BEGIN
         - This is a landing + directory layer, intentionally light
         - Use when a domain should point somewhere meaningful before it’s “ready”
@@ -167,6 +175,7 @@
           <li><a href="https://xoledger.com/health">xoledger.com/health</a> <span class="muted">health</span></li>
           <li><a href="https://xo-digest.com/vault/daily/index.html">xo-digest.com</a> <span class="muted">daily</span></li>
           <li><a href="https://xowlpost.com">xowlpost.com</a> <span class="muted">publisher</span></li>
+          <li><a href="/ops.json">ops.json</a> <span class="muted">machine-readable surface map</span></li>
         </ul>
       </article>
 
