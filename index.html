@@ -25,7 +25,7 @@
     a:hover{border-bottom-color:rgba(16,17,20,.35)}
     footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.95em}
-    .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
+    .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted);background:rgba(16,17,20,.02)}
     .muted{color:var(--muted)}
     ul{margin:10px 0 0 18px;padding:0}
     li{margin:6px 0}
@@ -34,10 +34,10 @@
     table.status th,table.status td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
     table.status th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:650;background:rgba(16,17,20,.02)}
     table.status tr:last-child td{border-bottom:none}
-    .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--muted)}
-    .tag.live{color:var(--ink)}
-    .tag.build{color:var(--muted)}
-    .tag.parked{color:var(--muted)}
+    .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;line-height:1;color:var(--muted);background:rgba(16,17,20,.02)}
+    .tag.live{color:rgba(0,80,0,.92);border-color:rgba(0,128,0,.18);background:rgba(0,128,0,.06)}
+    .tag.build{color:rgba(120,70,0,.95);border-color:rgba(255,165,0,.22);background:rgba(255,165,0,.10)}
+    .tag.parked{color:rgba(60,60,60,.92);border-color:rgba(90,90,90,.16);background:rgba(90,90,90,.06)}
     ul.changelog{margin:10px 0 0 18px;padding:0}
     ul.changelog li{margin:8px 0}
     .date{display:inline-block;min-width:98px}
@@ -133,7 +133,7 @@
         - This is a landing + directory layer, intentionally light
         - Use when a domain should point somewhere meaningful before it’s “ready”
         OPS:STRIP:END -->
-</article>
+      </article>
 
       <article class="card">
         <h2>Ops</h2>
@@ -150,46 +150,46 @@
         <h2>Status</h2>
         <p class="label"><strong>Live / Parked / Build.</strong><br/>A tiny status table so nothing feels random.</p>
 
-        <div style="overflow:auto;border:1px solid var(--line);border-radius:12px;margin-top:12px">
-          <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <div style="overflow:auto">
+          <table class="status">
             <thead>
               <tr>
-                <th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">Surface</th>
-                <th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">Domain</th>
-                <th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">State</th>
-                <th style="text-align:left;padding:10px;border-bottom:1px solid var(--line)">Note</th>
+                <th>Surface</th>
+                <th>Domain</th>
+                <th>State</th>
+                <th>Note</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding:10px;border-bottom:1px solid var(--line)">Center</td>
-                <td style="padding:10px"><a href="https://xo.center">xo.center</a></td>
-                <td style="padding:10px"><span class="pill">Live</span></td>
-                <td style="padding:10px" class="muted">Directory surface</td>
+                <td>Center</td>
+                <td><a href="https://xo.center">xo.center</a></td>
+                <td><span class="tag live">Live</span></td>
+                <td class="muted">Directory surface</td>
               </tr>
               <tr>
-                <td style="padding:10px;border-bottom:1px solid var(--line)">Constellation</td>
-                <td style="padding:10px;border-bottom:1px solid var(--line)"><a href="https://constellation.bond">constellation.bond</a></td>
-                <td style="padding:10px;border-bottom:1px solid var(--line)"><span class="pill">Parked</span></td>
-                <td style="padding:10px;border-bottom:1px solid var(--line)" class="muted">Placeholder landing</td>
+                <td>Constellation</td>
+                <td><a href="https://constellation.bond">constellation.bond</a></td>
+                <td><span class="tag parked">Parked</span></td>
+                <td class="muted">Placeholder landing</td>
               </tr>
               <tr>
-                <td style="padding:10px;border-bottom:1px solid var(--line)">Vault</td>
-                <td style="padding:10px;border-bottom:1px solid var(--line)"><a href="https://xo-vault.com">xo-vault.com</a></td>
-                <td style="padding:10px;border-bottom:1px solid var(--line)"><span class="pill">Live</span></td>
-                <td style="padding:10px;border-bottom:1px solid var(--line)" class="muted">API root (UI later)</td>
+                <td>Vault</td>
+                <td><a href="https://xo-vault.com">xo-vault.com</a></td>
+                <td><span class="tag live">Live</span></td>
+                <td class="muted">API root (UI later)</td>
               </tr>
               <tr>
-                <td style="padding:10px;border-bottom:1px solid var(--line)">Ledger</td>
-                <td style="padding:10px;border-bottom:1px solid var(--line)"><a href="https://xoledger.com/ledger/">xoledger.com</a></td>
-                <td style="padding:10px;border-bottom:1px solid var(--line)"><span class="pill">Live</span></td>
-                <td style="padding:10px;border-bottom:1px solid var(--line)" class="muted">Use stable /ledger/ path</td>
+                <td>Ledger</td>
+                <td><a href="https://xoledger.com/ledger/">xoledger.com</a></td>
+                <td><span class="tag live">Live</span></td>
+                <td class="muted">Use stable /ledger/ path</td>
               </tr>
               <tr>
-                <td style="padding:10px">Pulse</td>
-                <td style="padding:10px"><a href="https://xo-pulse.com">xo-pulse.com</a></td>
-                <td style="padding:10px"><span class="pill">Build</span></td>
-                <td style="padding:10px" class="muted">Copy + routes evolving</td>
+                <td>Pulse</td>
+                <td><a href="https://xo-pulse.com">xo-pulse.com</a></td>
+                <td><span class="tag build">Build</span></td>
+                <td class="muted">Copy + routes evolving</td>
               </tr>
             </tbody>
           </table>
@@ -206,7 +206,7 @@
 
         <div class="row">
           <a href="https://github.com/xo-ecosystem/xo-center">Source →</a>
-          <span class="tiny">If Pages fails: it’s usually transient GitHub fetch. Action deploy below removes most of that.</span>
+          <span class="tiny">If Pages fails: it’s usually a transient GitHub fetch. The Action deploy path reduces that.</span>
         </div>
       </article>
     </section>

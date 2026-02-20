@@ -2,19 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>constellation.bond</title>
+  <title>Constellation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;padding:64px;line-height:1.5}
-    h1{margin:0 0 8px 0;font-size:40px}
-    p{margin:0 0 16px 0;max-width:52ch}
-    .muted{opacity:.7}
-    a{color:inherit}
+    :root { --ink:#111; --paper:#fafafa; --muted:#666; --hairline:#e6e6e6; }
+    html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+    main{max-width:980px;padding:64px 24px;}
+    header{margin-bottom:40px;}
+    h1{font-size:28px;font-weight:500;margin:0 0 10px 0;}
+    .sub{color:var(--muted);font-size:14px;margin:0;}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+    .card{border:1px solid var(--hairline);border-radius:14px;padding:18px;background:#fff;}
+    .card h2{font-size:16px;font-weight:600;margin:0 0 10px 0;}
+    .slot{height:10px;border-radius:999px;background:var(--hairline);margin:10px 0;}
+    .slot.sm{width:60%} .slot.md{width:82%} .slot.lg{width:95%}
+    .badge{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;line-height:1;color:var(--muted);background:rgba(16,17,20,.02)}
+    .badge.live{background:rgba(0,128,0,.06);color:rgba(0,80,0,.9);border-color:rgba(0,128,0,.18)}
+    .badge.build{background:rgba(255,165,0,.10);color:rgba(120,70,0,.95);border-color:rgba(255,165,0,.22)}
+    .badge.parked{background:rgba(90,90,90,.06);color:rgba(60,60,60,.92);border-color:rgba(90,90,90,.16)}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+    .list{margin:10px 0 0 18px}
+    nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    a{font-size:13px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--hairline);}
+    a:hover{border-bottom-color:var(--ink);}
+    footer{margin-top:48px;color:var(--muted);font-size:12px;}
+    code{background:#f3f4f6;padding:.15em .35em;border-radius:6px;}
   </style>
 </head>
 <body>
-  <h1>constellation.bond</h1>
-  <p class="muted">A quiet map of the XO constellation. Coming online.</p>
-  <p><a href="https://xo.center">Go to xo.center →</a></p>
+  <main>
+    <header>
+      <h1>Constellation</h1>
+      <p class="sub"><!-- slot: one-sentence purpose --></p>
+      <nav>
+        <!-- slot: anchor links -->
+        <a href="#map">Map</a>
+        <a href="#flows">Flows</a>
+        <a href="#contracts">Contracts</a>
+        <a href="#storage">Storage</a>
+        <a href="#identity">Identity</a>
+        <a href="#domains">Domains</a>
+        <a href="#status">Status</a>
+      </nav>
+    </header>
+
+    <!-- 1) MAP: visual-lite (no SVG yet, just placeholders) -->
+    <section id="map" class="card" style="margin-bottom:16px;">
+      <h2>Map</h2>
+      <!-- slot: tiny diagram later (svg) -->
+      <div class="slot lg"></div>
+      <div class="slot md"></div>
+      <div class="slot sm"></div>
+    </section>
+
+    <!-- 2) CORE NODES -->
+    <section class="grid" style="margin-bottom:16px;">
+      <div class="card">
+        <h2>Ledger</h2>
+        <!-- slot -->
+        <div class="slot lg"></div><div class="slot md"></div>
+        <a href="https://xoledger.com">xoledger.com</a>
+      </div>
+      <div class="card">
+        <h2>Digest</h2>
+        <div class="slot lg"></div><div class="slot md"></div>
+        <a href="https://xo-digest.com">xo-digest.com</a>
+      </div>
+      <div class="card">
+        <h2>Pulse</h2>
+        <div class="slot lg"></div><div class="slot md"></div>
+        <a href="https://xo-pulse.com">xo-pulse.com</a>
+      </div>
+      <div class="card">
+        <h2>Vault</h2>
+        <div class="slot lg"></div><div class="slot md"></div>
+        <a href="https://xo-vault.com">xo-vault.com</a>
+      </div>
+    </section>
+
+    <!-- 3) FLOWS -->
+    <section id="flows" class="card" style="margin-bottom:16px;">
+      <h2>Flows</h2>
+      <!-- slot: bullet list later -->
+      <div class="slot lg"></div><div class="slot lg"></div><div class="slot md"></div>
+      <!-- slot: “Signed → Visible → Alive” pipeline rows later -->
+    </section>
+
+    <!-- 4) PROTOCOL SURFACES -->
+    <section class="grid" style="margin-bottom:16px;">
+      <div id="storage" class="card">
+        <h2>Storage</h2>
+        <div class="slot lg"></div><div class="slot md"></div>
+        <!-- slot: Arweave / IPFS / Storj pointers -->
+      </div>
+      <div id="contracts" class="card">
+        <h2>Contracts</h2>
+        <div class="slot lg"></div><div class="slot md"></div>
+        <!-- slot: chain IDs, ERC-1155, registry -->
+      </div>
+      <div id="identity" class="card">
+        <h2>Identity</h2>
+        <div class="slot lg"></div><div class="slot md"></div>
+        <!-- slot: login.xo.center, session model, proofs -->
+      </div>
+      <div id="domains" class="card">
+        <h2>Domains</h2>
+        <div class="slot lg"></div><div class="slot md"></div>
+        <!-- slot: “what lives where” -->
+      </div>
+    </section>
+
+    <!-- 5) STATUS / RECEIPTS -->
+    <section id="status" class="card">
+      <h2>Status</h2>
+      <!-- slot: simple table later (static html) -->
+      <p class="sub">
+        <!-- slot: last updated + canonical pointers, e.g. <code>/vault/daily/</code> -->
+      </p>
+      <div class="slot lg"></div><div class="slot md"></div>
+    </section>
+
+    <footer>
+      <!-- slot: one-line footer mantra -->
+    </footer>
+  </main>
+  
 </body>
 </html>
