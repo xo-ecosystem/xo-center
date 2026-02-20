@@ -41,13 +41,15 @@
     ul.changelog{margin:10px 0 0 18px;padding:0}
     ul.changelog li{margin:8px 0}
     .date{display:inline-block;min-width:98px}
-    .anchor{margin-top:18px;border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;background:#fff}
+    .anchor{margin-top:18px;border:1px solid var(--line);border-radius:16px;padding:26px 18px 24px;background:rgba(16,17,20,.015)}
     .anchor h2{margin:0 0 10px 0}
     .anchor p{max-width:72ch;color:var(--muted)}
     .anchor .k{color:var(--ink);font-weight:650}
     .anchor ul{margin:10px 0 0 18px;padding:0}
     .anchor li{margin:8px 0}
     .anchor .row{margin-top:12px}
+    .anchor .manifesto{margin-top:12px;color:var(--ink);font-weight:550;letter-spacing:-.01em}
+    .anchor .pill{background:rgba(16,17,20,.01);border-color:rgba(16,17,20,.08);color:rgba(16,17,20,.55)}
   </style>
 </head>
 <body>
@@ -63,17 +65,16 @@
 
     <section class="anchor">
       <h2>Why this exists</h2>
-      <p class="label">
-        <span class="k">XO is a long-term structure.</span> It turns signals into durable artifacts and keeps the system readable as it grows.
+      <p>
+        <span class="k">XO</span> is a long-arc trust architecture.
+        Each surface has a role. Each update can be sealed.
+        Each signal can become an artifact.
       </p>
-      <ul>
-        <li><span class="k">Trust:</span> signed provenance and receipts you can verify later.</li>
-        <li><span class="k">Memory:</span> a public ledger + daily digest to prevent drift.</li>
-        <li><span class="k">Participation:</span> an inbox layer so anyone can leave a trace without owning the core.</li>
-      </ul>
+      <p class="manifesto">Signed → Visible → Alive.</p>
       <div class="row">
-        <span class="pill">Start here → pick a surface</span>
-        <span class="pill">Everything should link back</span>
+        <span class="pill">Calm structure</span>
+        <span class="pill">Verifiable history</span>
+        <span class="pill">Public surface • Private key</span>
       </div>
     </section>
 
@@ -232,23 +233,6 @@
           <span class="tiny">If Pages fails: it’s usually a transient GitHub fetch. The Action deploy path reduces that.</span>
         </div>
       </article>
-    </section>
-    <section class="anchor">
-      <h2>Why this exists</h2>
-      <p>
-        <span class="k">XO</span> is a long-arc trust architecture.
-        Each surface has a role. Each update can be sealed.
-        Each signal can become an artifact.
-      </p>
-      <p>
-        The center exists to make orientation simple —
-        so nothing feels accidental, and everything can be traced.
-      </p>
-      <div class="row">
-        <span class="pill">Calm structure</span>
-        <span class="pill">Verifiable history</span>
-        <span class="pill">Public surface • Private key</span>
-      </div>
     </section>
     <footer>
       <span>XO is a public surface with a private key — calm by design.</span>
